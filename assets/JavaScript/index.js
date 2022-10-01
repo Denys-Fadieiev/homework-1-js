@@ -109,75 +109,34 @@ const triangle3 = function(a, b, c) {
 
 // 4. написть функцию, которая принимает число и возвращает сумму нечетных чисел от 1 до указанного числа
 
-//!Я не могу понять почему у меня в конце undefined выбивает
 
-let i = 0;
-
-const sumOdd = function(num) {
-  while(i < num) {
-    if(i % 2 !== 0){
-      console.log(i);
-    }
-    i++;
-    if (i > num){
-      break;
+const  oddNumbers = (num) => {
+  let result = 0;
+  for (let i = 0; i <= num; i ++) {
+    if (i % 2 !== 0) {
+      result = result + i;
     }
   }
+  return result;
 }
-console.log(sumOdd (10))
 
-// или
-
-const sumOdd2 = function(num) {
-  while(i < num) {
-    i++;
-    if(i % 2 === 0){
-      continue;
-    }
-    console.log(i);
-  }
-}
-console.log(sumOdd2 (10))
-
-//ниже вариант с меньшим количеством циклов
-
-i = 1;
-
-const sumOdd3 = function(num) {
-  while(i <= num && i % 2 !== 0) {
-    console.log(i);
-    i+=2;
-    if (i >= num) {
-      break;
-    }
-  }
-}
-console.log(sumOdd3 (11))
+console.log(oddNumbers(100));
 
 
 // 5. Создать функцию, которая будет проверять, является ли число простым. Простым является неотрицательное число, которое делится нацело только на самого себя или на 1.
 
-i = 0;
 
-// const checkPrimeNum = function(primeNum) {
-//   while(primeNum > i){
-//     if(primeNum % i !== 0){
-//       i++;
-//       return primeNum;
-//     } else {
-//       return null;
-//     }
-//   }
-// }
-
-const checkPrimeNum = function(primeNum) {
-  while(primeNum > i){
-    i++;
-    if (primeNum % 1 === 0 && primeNum % i++ === 0){
-      continue;
+let isPrime = (num) => {
+  debugger
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
     }
-  return primeNum;
   }
+  return num > 1;
 }
-console.log(checkPrimeNum)
 
+console.log(isPrime(3));
+console.log(isPrime(7));
+console.log(isPrime(4));
+console.log(isPrime(9));
